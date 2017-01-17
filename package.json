@@ -1,0 +1,22 @@
+{
+  "name": "canvas",
+  "version": "1.0.0",
+  "description": "canvas demo",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "private"
+  },
+  "keywords": [
+    "canvas"
+  ],
+  "author": "Ryu",
+  "license": "MIT",
+  "devDependencies": {
+    "express": "^4.14.0"
+  }
+}
