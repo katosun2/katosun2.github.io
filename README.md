@@ -1,3 +1,0 @@
-Ryu's lab.
-
-MIT
