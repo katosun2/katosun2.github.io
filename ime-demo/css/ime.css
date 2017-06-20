@@ -1,0 +1,175 @@
+@charset "UTF-8";
+/* 通过calc()精确控制字号大小 @mixin -> @inlude */
+/* 文本溢出时使用省略号 占位实现(%placeholder) -> @extend */
+/* 居中 reference http://www.w3cplus.com/preprocessor/centering-with-sass.html */
+[v-cloak] {
+  visibility: hidden;
+}
+
+.mod_form {
+  padding-bottom: 10px;
+}
+
+.mod_form input {
+  outline: none;
+  border: 1px solid #DDDDDD;
+  display: block;
+  height: 24px;
+  font-size: 12px;
+  font-family: "\5B8B\4F53";
+}
+
+.mod_form .put_out {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.mod_ime {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  user-select: none;
+  background: #989898;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  padding: 0.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mod_ime .ime_m {
+  flex: 1;
+}
+
+.mod_ime .ime_m table {
+  width: 100%;
+}
+
+.mod_ime .ime_m table td {
+  text-align: center;
+  width: 20%;
+  padding: 0.14rem;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.mod_ime .ime_m table td span {
+  display: block;
+  height: 1.5rem;
+  padding-top: 0.2rem;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e2e2e2+0,dbdbdb+50,d1d1d1+51,fefefe+100;Grey+Gloss+%231 */
+  background: #e2e2e2;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe',GradientType=0 );
+  /* IE6-9 */
+}
+
+.mod_ime .ime_m table td span.ime_pot {
+  font-family: "\5B8B\4F53";
+}
+
+.mod_ime .ime_m table td span.ime_space {
+  padding-top: 0.45rem;
+}
+
+.ime-focus {
+  border-bottom: 1px solid #2C79E5 !important;
+}
+
+/*光标闪动补丁 { */
+input[type="text"] {
+  letter-spacing: 0px;
+}
+
+.put_out {
+  position: relative;
+  width: 100%;
+}
+
+.put_out input {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.put_out .cursor {
+  position: absolute;
+  z-index: 10;
+  content: '';
+  top: 50%;
+  left: 1px;
+  height: 12px;
+  width: 1px;
+  margin-top: -6px;
+  display: none;
+  -webkit-animation: 1s blink infinite;
+  animation: 1s blink infinite;
+  -webkit-box-shadow: 0 0 0 darkgreen;
+  box-shadow: 0 0 0 darkgreen;
+  border: none;
+}
+
+.put_out.put_out_focus .cursor {
+  display: block;
+}
+
+/*必须input的字体样式一致*/
+.tempWord {
+  font-size: 0.6rem;
+  letter-spacing: 0px;
+  border: 1px #ddd solid;
+  box-sizing: border-box;
+  font-family: inherit;
+  /*必须input的字体样式一致*/
+  font-size: 12px;
+  font-family: "\5B8B\4F53";
+}
+
+@keyframes blink {
+  50% {
+    color: #000000;
+    background: #000000;
+    -webkit-box-shadow: 0 0 1px transparent;
+    box-shadow: 0 0 1px transparent;
+  }
+}
+
+@-webkit-keyframes blink {
+  50% {
+    color: #000000;
+    background: #000000;
+    -webkit-box-shadow: 0 0 1px transparent;
+    box-shadow: 0 0 1px transparent;
+  }
+}
+
+@-ms-keyframes blink {
+  50% {
+    color: #000000;
+    background: #000000;
+    -webkit-box-shadow: 0 0 1px transparent;
+    box-shadow: 0 0 1px transparent;
+  }
+}
+
+@-moz-keyframes blink {
+  50% {
+    color: #000000;
+    background: #000000;
+    -webkit-box-shadow: 0 0 1px transparent;
+    box-shadow: 0 0 1px transparent;
+  }
+}
+
+/*} 光标闪动补丁*/
