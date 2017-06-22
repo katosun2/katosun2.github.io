@@ -1,5 +1,5 @@
 /**
- * 模拟键盘输入法 v1.2
+ * 模拟键盘输入法 v1.2.1
  * for chrome,safari,firfox
  *
  * Author Ryu
@@ -28,14 +28,6 @@
 	tpl = [
 		'<!--S mod_ime -->',
 		'<div class="mod_ime" id="mod_ime_${count}">',
-		//'<div class="ime_l">',
-		//'<div class="btn">',
-		//'<span class="ico_up" data-key="up"></span>',
-		//'</div>',
-		//'<div class="btn btn_down">',
-		//'<span class="ico_down" data-key="down"></span>',
-		//'</div>',
-		//'</div>',
 		'<div class="ime_m">',
 		'<table width="100%" border="0" cellspacing="0" cellpadding="0">',
 		'<tbody>',
@@ -64,7 +56,6 @@
 		'<td><span data-key="right" @click="moveRight()">→</span></td>',
 		'<td><span data-key="0">0</span></td>',
 		'<td><span class="ime_pot" data-key="."><strong>·</strong></span></td>',
-		/*'<td><span class="ime_space" data-key=" ">┗┛</span></td>',*/
 		'<td><span data-key="e">e</span></td>',
 		'<td><span data-key="ok">=</span></td>',
 		'</tr>',
@@ -151,6 +142,8 @@
                     }
                 }
             }
+
+			return ime;
         },
 
         /*设置vue的值*/
@@ -165,6 +158,8 @@
             if(_vue){
                 _vue.$set(_vue.$data, key, val);
             }
+
+			return ime;
         },
 
         /*变更样式*/
@@ -179,6 +174,8 @@
 				/*添加样式*/
 				$(ime.target).addClass('ime-focus').parent().addClass('put_out_focus');
 			}
+
+			return ime;
         },
 
         /*获取光标的位置*/
@@ -226,6 +223,8 @@
 				/*定位虚拟光标*/
 				ime.flashCusor(ctrl, pos, $(ime.target).val().split(''));
 			}
+
+			return ime;
         },
 
         /*输入字符*/
@@ -267,6 +266,8 @@
 				/*设置vue值*/
 				ime.setVueKey(ime.target.id, word.join(''));
 			}
+
+			return ime;
         },
 
         /*删除字符*/
@@ -312,6 +313,8 @@
                 /*设置vue值*/
                 ime.setVueKey(ime.target.id, word.join(''));
             }
+
+			return ime;
         },
 
         /*上一个输入框*/
@@ -351,6 +354,8 @@
                 ime.setCaretPosition(ime.target, ime.curPos, word.join(''));
                 ime.target.focus();
             }
+
+			return ime;
         },
 
         /*下一个输入框*/
@@ -392,6 +397,18 @@
             }
         },
 
+        /*重新聚焦*/
+        resetFocus: function(){
+			var ime = this;
+
+			if(ime.target){
+				ime.target.blur();
+				ime.target.focus();
+			}
+
+			return ime;
+        },
+
         /*光标左移动*/
         moveLeft: function(){
             var ime = this,
@@ -413,7 +430,10 @@
                 /*重新设置光标位置*/
                 ime.setCaretPosition(ime.target, ime.curPos, $(ime.target).val().split(''));
             }
+
+			return ime;
         },
+
         moveRight: function(){
             var ime = this,
                 target = $(ime.target),
@@ -438,6 +458,8 @@
                 /*重新设置光标位置*/
                 ime.setCaretPosition(ime.target, ime.curPos, word.join(''));
             }
+
+			return ime;
         },
 
         /*
@@ -480,6 +502,8 @@
             outSpan.find('.cursor').css({
                 left: left - 2
             });
+
+			return ime;
         },
 
         /*清空*/
@@ -503,6 +527,8 @@
                 /*定位虚拟光标*/
                 ime.flashCusor(ime.target, 0, []);
             }
+
+			return ime;
         },
 
         /*插入HTML*/
