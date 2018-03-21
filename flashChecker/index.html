@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>flashChecker</title>
+    <style>
+    .red { color: red; }
+    </style>
+    <script type="text/javascript" src="flashChecker.js"></script>
+</head>
+<body>
+<div id="box"></div>
+
+<script>
+var box = document.getElementById('box');
+var msg = [];
+
+var isFlash = flashChecker();
+console.log(isFlash);
+
+msg.push('是否安装Flash：' + (isFlash.hasFlash ? '<span class="red">是</span>' : '<span class="red">否</span>'));
+if(isFlash.hasFlash){
+    msg.push('<br />');
+    msg.push('Flash版本：' + isFlash.ver)
+}
+
+box.innerHTML = msg.join('');
+
+</script>
+</body>
+</html>
+
