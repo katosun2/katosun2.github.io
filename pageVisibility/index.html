@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>    
+<html>    
+<head>    
+<meta charset="UTF-8" />
+<title>pagevisibility api</title>
+<script type="text/javascript">    
+var dc = document;
+
+function onLoad(){    
+    dc.addEventListener("visibilitychange",stateChanged);    
+    dc.addEventListener("webkitvisibilitychange", stateChanged);    
+    dc.addEventListener("msvisibilitychange", stateChanged);    
+}    
+function stateChanged(){    
+    console.log(dc.webkitVisibilityState);    
+
+    if(dc.hidden || dc.webkitHidden || dc.msHidden){    
+        // new tab or window minimized  
+        dc.title = 'o(°▽、°o)';
+    } else {
+        dc.title = 'o(*￣▽￣*)o';
+    }
+}    
+</script>    
+</head>    
+<body onLoad="onLoad()">    
+<a target="_blank" href="https://w3c.github.io/page-visibility/">pagevisibility api</a>
+</body>    
+</html>
