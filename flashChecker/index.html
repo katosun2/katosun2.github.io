@@ -22,7 +22,7 @@ console.log(isFlash);
 msg.push('是否安装Flash：' + (isFlash.hasFlash ? '<span class="red">是</span>' : '<span class="red">否</span>'));
 if(isFlash.hasFlash){
     msg.push('<br />');
-    msg.push('Flash版本：' + isFlash.ver)
+    msg.push('Flash版本：<span class="red">' + isFlash.ver + '</span>');
 }
 
 box.innerHTML = msg.join('');
