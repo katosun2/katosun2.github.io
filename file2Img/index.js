@@ -67,7 +67,7 @@ var handleFileSelect = function (evt) {
                 canvas: obj.canvas,
                 data: obj.data,
                 type: obj.type,
-                filename: obj.imgFilename,
+                filename: obj.filename,
                 width: obj.width,
                 height: obj.height
             });
