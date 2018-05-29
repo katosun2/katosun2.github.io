@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>通过canvas 将 webp 转换 png 格式</title>
+    <title>将任意文件转化为图片</title>
 	<style>
 		div,ul,li,p,span, input { padding:0; margin:0;}
 		.file{ width: 88px; height: 30px; line-height:30px; overflow:hidden;}
@@ -17,14 +17,15 @@
     <script type="text/javascript" src="./DownloadCanvas.js/raw/master/canvg/canvg.js"></script> 
     <script type="text/javascript" src="./DownloadCanvas.js/raw/master/FileSaver/FileSaver.js"></script> 
     <script type="text/javascript" src="./DownloadCanvas.js/raw/master/DownloadCanvas.js"></script> 
+    <script type="text/javascript" src="./file2Img.js"></script> 
 </head>
 <body>
 <div class="file">
-	<label for="up_file">上传图片</label>
-	<input type="file" name="up_file" value="" id="up_file" accept="image/*" multiple  />
+	<label for="up_file">上传文件</label>
+	<input type="file" name="up_file" value="" id="up_file" multiple  />
 </div>
 <div class="drop_zone" id="drop_zone">拖拽上传</div>
-<p>请在支持 <strong>.webp</strong> 格式的浏览器进行转换，如 <strong>Chrome</strong></p>
+<p>请在最新浏览器进行转换，如 <strong>Chrome</strong></p>
 <script type="text/javascript" src="./index.js"></script>
 </body>
 </html>
